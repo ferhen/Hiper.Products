@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiper.Products", "Hiper.Products\Hiper.Products.csproj", "{927FECE5-71A0-4C85-BDFD-71A30FA92FEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hiper.Application", "Hiper.Application\Hiper.Application.csproj", "{927FECE5-71A0-4C85-BDFD-71A30FA92FEC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MainApplication", "MainApplication", "{162D6552-F3B1-49B9-837D-03B41B11958C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SynchronizationAPI", "SynchronizationAPI", "{C29F8999-C9D9-41DE-BC7A-EFCE74CD188D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hiper.Application.Data", "Hiper.Application.Data\Hiper.Application.Data.csproj", "{C4FB1FBC-5419-469D-B6E2-37DE29BF2721}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hiper.Application.Core", "Hiper.Application.Core\Hiper.Application.Core.csproj", "{BC7102FE-DFD3-467D-BD74-365623F0EEA3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hiper.Application.Domain", "Hiper.Application.Domain\Hiper.Application.Domain.csproj", "{EC2286E7-5AB5-46FF-B6FE-E1D07CB0FED5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hiper.Application.Data.SqlServer", "Hiper.Application.Data.SqlServer\Hiper.Application.Data.SqlServer.csproj", "{6E13A5F7-9D78-4FFE-B473-5093BD84A8BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiper.Application.Data.SqlServer.Migrations", "Hiper.Application.Data.SqlServer.Migrations\Hiper.Application.Data.SqlServer.Migrations.csproj", "{3B82F8C0-AFA7-4BCD-A499-6F71AD9A8743}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiper.Application.Util", "Hiper.Application.Util\Hiper.Application.Util.csproj", "{AEB7A5E4-D802-457C-B911-4872FD699C69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiper.Application.Presentation", "Hiper.Application.Presentation\Hiper.Application.Presentation.csproj", "{E8F85C80-5712-482F-A96E-6560659EB5CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +33,47 @@ Global
 		{927FECE5-71A0-4C85-BDFD-71A30FA92FEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{927FECE5-71A0-4C85-BDFD-71A30FA92FEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{927FECE5-71A0-4C85-BDFD-71A30FA92FEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4FB1FBC-5419-469D-B6E2-37DE29BF2721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4FB1FBC-5419-469D-B6E2-37DE29BF2721}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4FB1FBC-5419-469D-B6E2-37DE29BF2721}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4FB1FBC-5419-469D-B6E2-37DE29BF2721}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC7102FE-DFD3-467D-BD74-365623F0EEA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC7102FE-DFD3-467D-BD74-365623F0EEA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC7102FE-DFD3-467D-BD74-365623F0EEA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC7102FE-DFD3-467D-BD74-365623F0EEA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC2286E7-5AB5-46FF-B6FE-E1D07CB0FED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC2286E7-5AB5-46FF-B6FE-E1D07CB0FED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC2286E7-5AB5-46FF-B6FE-E1D07CB0FED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC2286E7-5AB5-46FF-B6FE-E1D07CB0FED5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E13A5F7-9D78-4FFE-B473-5093BD84A8BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E13A5F7-9D78-4FFE-B473-5093BD84A8BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E13A5F7-9D78-4FFE-B473-5093BD84A8BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E13A5F7-9D78-4FFE-B473-5093BD84A8BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B82F8C0-AFA7-4BCD-A499-6F71AD9A8743}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B82F8C0-AFA7-4BCD-A499-6F71AD9A8743}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B82F8C0-AFA7-4BCD-A499-6F71AD9A8743}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B82F8C0-AFA7-4BCD-A499-6F71AD9A8743}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEB7A5E4-D802-457C-B911-4872FD699C69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEB7A5E4-D802-457C-B911-4872FD699C69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEB7A5E4-D802-457C-B911-4872FD699C69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEB7A5E4-D802-457C-B911-4872FD699C69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8F85C80-5712-482F-A96E-6560659EB5CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8F85C80-5712-482F-A96E-6560659EB5CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8F85C80-5712-482F-A96E-6560659EB5CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8F85C80-5712-482F-A96E-6560659EB5CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{927FECE5-71A0-4C85-BDFD-71A30FA92FEC} = {162D6552-F3B1-49B9-837D-03B41B11958C}
+		{C4FB1FBC-5419-469D-B6E2-37DE29BF2721} = {162D6552-F3B1-49B9-837D-03B41B11958C}
+		{BC7102FE-DFD3-467D-BD74-365623F0EEA3} = {162D6552-F3B1-49B9-837D-03B41B11958C}
+		{EC2286E7-5AB5-46FF-B6FE-E1D07CB0FED5} = {162D6552-F3B1-49B9-837D-03B41B11958C}
+		{6E13A5F7-9D78-4FFE-B473-5093BD84A8BE} = {162D6552-F3B1-49B9-837D-03B41B11958C}
+		{3B82F8C0-AFA7-4BCD-A499-6F71AD9A8743} = {162D6552-F3B1-49B9-837D-03B41B11958C}
+		{AEB7A5E4-D802-457C-B911-4872FD699C69} = {162D6552-F3B1-49B9-837D-03B41B11958C}
+		{E8F85C80-5712-482F-A96E-6560659EB5CC} = {162D6552-F3B1-49B9-837D-03B41B11958C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4EE6C159-EF0A-4353-8258-05AF18E02DB3}
