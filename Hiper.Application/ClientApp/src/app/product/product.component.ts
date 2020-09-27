@@ -64,7 +64,11 @@ export class ProductComponent implements OnInit, OnDestroy {
                 );
         }
         if (product.wasStockQuantityChanged()) {
-            this.stockService.editStock( { stockId: product.stockId, stockQuantity: product.stockQuantity })
+            this.stockService.editStock({
+                stockId: product.stockId,
+                stockQuantity: product.stockQuantity,
+                productId: product.productId
+            })
                 .pipe(takeUntil(this.destroy$))
                 .subscribe(
                     x => this.products.next((() => {

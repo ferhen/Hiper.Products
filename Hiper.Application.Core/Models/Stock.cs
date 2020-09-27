@@ -13,26 +13,11 @@ namespace Hiper.Application.Core.Models
         {
             if (productId < 0)
                 throw new ArgumentException("Produto deve existir");
-
-            ProductId = productId;
-            SetQuantity(quantity);
-        }
-
-        public void Update(int quantity)
-        {
-            SetQuantity(quantity);
-        }
-
-        private void SetQuantity(int quantity)
-        {
-            ValidateQuantity(quantity);
-            Quantity = quantity;
-        }
-
-        private void ValidateQuantity(int quantity)
-        {
             if (quantity < 0)
                 throw new ArgumentException("Quantidade em estoque deve ser maior que zero");
+
+            ProductId = productId;
+            Quantity = quantity;
         }
     }
 }

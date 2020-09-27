@@ -2,6 +2,7 @@
 using Hiper.Application.Data.Repositories;
 using Hiper.Application.Data.SqlServer.EventsDispatcher;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using System;
@@ -14,14 +15,12 @@ namespace Hiper.Application.Data.SqlServer.Repositories.Base
     {
         #region Constructor
         private readonly ApplicationDbContext _context;
-        private readonly ApplicationUser _applicationUser;
         private IDbContextTransaction transaction = null;
         private readonly IMediator _mediator;
 
-        public UnitOfWork(ApplicationDbContext context, ApplicationUser applicationUser, IMediator mediator)
+        public UnitOfWork(ApplicationDbContext context, IMediator mediator)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
-            _applicationUser = applicationUser ?? throw new ArgumentNullException(nameof(applicationUser));
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
         #endregion
@@ -83,8 +82,8 @@ namespace Hiper.Application.Data.SqlServer.Repositories.Base
         #endregion
 
         #region Command
-        public IProductRepository Products => _productRepository ??= new ProductRepository(_context, _applicationUser);
-        public IStockRepository Stocks => _stockRepository ??= new StockRepository(_context, _applicationUser);
+        public IProductRepository Products => _productRepository ??= new ProductRepository(_context);
+        public IStockRepository Stocks => _stockRepository ??= new StockRepository(_context);
         #endregion
 
         #region IDisposable Support

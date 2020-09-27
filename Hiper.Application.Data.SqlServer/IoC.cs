@@ -21,7 +21,6 @@ namespace Hiper.Application.Data.SqlServer
             services.AddIdentityServer()
                 .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
 
-            services.AddScoped(x => new ApplicationUser());
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScopedFactory<IUnitOfWork, UnitOfWork>();
         }

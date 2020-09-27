@@ -42,6 +42,8 @@ namespace Hiper.Application
                 configuration.RootPath = "ClientApp/dist";
             });
 
+            services.AddHttpContextAccessor();
+
             services.AddMediatR(typeof(NewProductEventHandler));
 
             services.AddDomain();

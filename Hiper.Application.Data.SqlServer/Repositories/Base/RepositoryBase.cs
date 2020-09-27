@@ -1,9 +1,11 @@
 ﻿using Hiper.Application.Core.Models;
 using Hiper.Application.Data.Repositories.Base;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Z.EntityFramework.Plus;
 
@@ -14,20 +16,20 @@ namespace Hiper.Application.Data.SqlServer.Repositories.Base
         #region Constructor
         protected ApplicationDbContext Db;
         protected DbSet<TModel> DbSet;
-        protected readonly ApplicationUser ApplicationUser;
+        protected readonly string CurrentUser;
 
-        public RepositoryBase(ApplicationDbContext context, ApplicationUser applicationUser)
+        public RepositoryBase(ApplicationDbContext context)
         {
             Db = context;
             DbSet = Db.Set<TModel>();
-            ApplicationUser = applicationUser;
+            CurrentUser = context.CurrentUser;
         }
         #endregion
 
         public virtual async Task<TModel> Add(TModel entity)
         {
             entity.CreatedOn = entity.LastUpdateOn = DateTimeOffset.Now;
-            entity.CreatedBy = entity.LastUpdatedBy = ApplicationUser.UserName;
+            entity.CreatedBy = entity.LastUpdatedBy = CurrentUser;
             await DbSet.AddAsync(entity);
             return await GetById(entity.Id);
         }
@@ -37,7 +39,7 @@ namespace Hiper.Application.Data.SqlServer.Repositories.Base
             foreach (var entity in entities)
             {
                 entity.CreatedOn = entity.LastUpdateOn = DateTimeOffset.Now;
-                entity.CreatedBy = entity.LastUpdatedBy = ApplicationUser.UserName;
+                entity.CreatedBy = entity.LastUpdatedBy = CurrentUser;
             }
             await DbSet.AddRangeAsync(entities);
             return entities;
@@ -46,7 +48,7 @@ namespace Hiper.Application.Data.SqlServer.Repositories.Base
         public virtual async Task<TModel> Update(TModel entity)
         {
             entity.LastUpdateOn = DateTimeOffset.Now;
-            entity.LastUpdatedBy = ApplicationUser.UserName;
+            entity.LastUpdatedBy = CurrentUser;
             var entry = Db.Entry(entity);
             entry.State = EntityState.Modified;
             entry.Property(e => e.CreatedOn).IsModified = false;

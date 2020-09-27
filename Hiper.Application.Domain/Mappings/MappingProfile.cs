@@ -21,6 +21,7 @@ namespace Hiper.Application.Domain.Mappings
             CreateMap<Stock, StockViewModel>()
                 .ForMember(dest => dest.StockId, opt => opt.MapFrom(x => x.Id))
                 .ForMember(dest => dest.StockQuantity, opt => opt.MapFrom(x => x.Quantity))
+                .ForMember(dest => dest.ProductId, opt => opt.MapFrom(x => x.ProductId))
                 .ReverseMap();
         }
     }

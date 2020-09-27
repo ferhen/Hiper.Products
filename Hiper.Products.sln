@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hiper.Application", "Hiper.Application\Hiper.Application.csproj", "{927FECE5-71A0-4C85-BDFD-71A30FA92FEC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MainApplication", "MainApplication", "{162D6552-F3B1-49B9-837D-03B41B11958C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{162D6552-F3B1-49B9-837D-03B41B11958C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SynchronizationAPI", "SynchronizationAPI", "{C29F8999-C9D9-41DE-BC7A-EFCE74CD188D}"
 EndProject
@@ -17,11 +17,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hiper.Application.Domain", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hiper.Application.Data.SqlServer", "Hiper.Application.Data.SqlServer\Hiper.Application.Data.SqlServer.csproj", "{6E13A5F7-9D78-4FFE-B473-5093BD84A8BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiper.Application.Data.SqlServer.Migrations", "Hiper.Application.Data.SqlServer.Migrations\Hiper.Application.Data.SqlServer.Migrations.csproj", "{3B82F8C0-AFA7-4BCD-A499-6F71AD9A8743}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hiper.Application.Data.SqlServer.Migrations", "Hiper.Application.Data.SqlServer.Migrations\Hiper.Application.Data.SqlServer.Migrations.csproj", "{3B82F8C0-AFA7-4BCD-A499-6F71AD9A8743}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiper.Application.Util", "Hiper.Application.Util\Hiper.Application.Util.csproj", "{AEB7A5E4-D802-457C-B911-4872FD699C69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hiper.Application.Util", "Hiper.Application.Util\Hiper.Application.Util.csproj", "{AEB7A5E4-D802-457C-B911-4872FD699C69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiper.Application.Presentation", "Hiper.Application.Presentation\Hiper.Application.Presentation.csproj", "{E8F85C80-5712-482F-A96E-6560659EB5CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hiper.Application.Presentation", "Hiper.Application.Presentation\Hiper.Application.Presentation.csproj", "{E8F85C80-5712-482F-A96E-6560659EB5CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiper.SynchronizationAPI", "Hiper.SynchronizationAPI\Hiper.SynchronizationAPI.csproj", "{6357F5FA-18FA-41C2-8A75-D1175E5F78CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiper.SynchronizationAPI.Core", "Hiper.SynchronizationAPI.Core\Hiper.SynchronizationAPI.Core.csproj", "{8C1A6D98-32B5-4A8E-97CC-A22C88CB992C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiper.SynchronizationAPI.Data", "Hiper.SynchronizationAPI.Data\Hiper.SynchronizationAPI.Data.csproj", "{A2DB9FD4-729B-46FE-8F1F-49FBB488F1D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiper.SynchronizationAPI.Data.SqlServer", "Hiper.SynchronizationAPI.Data.SqlServer\Hiper.SynchronizationAPI.Data.SqlServer.csproj", "{D246C104-8108-428B-AE45-36A7FECA0178}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiper.SynchronizationAPI.Data.SqlServer.Migrations", "Hiper.SynchronizationAPI.Data.SqlServer.Migrations\Hiper.SynchronizationAPI.Data.SqlServer.Migrations.csproj", "{F6B2428E-9959-4121-A1AE-12A61439B494}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiper.SynchronizationAPI.Domain", "Hiper.SynchronizationAPI.Domain\Hiper.SynchronizationAPI.Domain.csproj", "{0A0DA9B5-FC1B-4A28-91DE-CC909460E8A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +73,30 @@ Global
 		{E8F85C80-5712-482F-A96E-6560659EB5CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8F85C80-5712-482F-A96E-6560659EB5CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8F85C80-5712-482F-A96E-6560659EB5CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6357F5FA-18FA-41C2-8A75-D1175E5F78CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6357F5FA-18FA-41C2-8A75-D1175E5F78CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6357F5FA-18FA-41C2-8A75-D1175E5F78CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6357F5FA-18FA-41C2-8A75-D1175E5F78CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C1A6D98-32B5-4A8E-97CC-A22C88CB992C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C1A6D98-32B5-4A8E-97CC-A22C88CB992C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C1A6D98-32B5-4A8E-97CC-A22C88CB992C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C1A6D98-32B5-4A8E-97CC-A22C88CB992C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2DB9FD4-729B-46FE-8F1F-49FBB488F1D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2DB9FD4-729B-46FE-8F1F-49FBB488F1D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2DB9FD4-729B-46FE-8F1F-49FBB488F1D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2DB9FD4-729B-46FE-8F1F-49FBB488F1D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D246C104-8108-428B-AE45-36A7FECA0178}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D246C104-8108-428B-AE45-36A7FECA0178}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D246C104-8108-428B-AE45-36A7FECA0178}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D246C104-8108-428B-AE45-36A7FECA0178}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6B2428E-9959-4121-A1AE-12A61439B494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6B2428E-9959-4121-A1AE-12A61439B494}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6B2428E-9959-4121-A1AE-12A61439B494}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6B2428E-9959-4121-A1AE-12A61439B494}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A0DA9B5-FC1B-4A28-91DE-CC909460E8A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A0DA9B5-FC1B-4A28-91DE-CC909460E8A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A0DA9B5-FC1B-4A28-91DE-CC909460E8A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A0DA9B5-FC1B-4A28-91DE-CC909460E8A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +110,12 @@ Global
 		{3B82F8C0-AFA7-4BCD-A499-6F71AD9A8743} = {162D6552-F3B1-49B9-837D-03B41B11958C}
 		{AEB7A5E4-D802-457C-B911-4872FD699C69} = {162D6552-F3B1-49B9-837D-03B41B11958C}
 		{E8F85C80-5712-482F-A96E-6560659EB5CC} = {162D6552-F3B1-49B9-837D-03B41B11958C}
+		{6357F5FA-18FA-41C2-8A75-D1175E5F78CE} = {C29F8999-C9D9-41DE-BC7A-EFCE74CD188D}
+		{8C1A6D98-32B5-4A8E-97CC-A22C88CB992C} = {C29F8999-C9D9-41DE-BC7A-EFCE74CD188D}
+		{A2DB9FD4-729B-46FE-8F1F-49FBB488F1D1} = {C29F8999-C9D9-41DE-BC7A-EFCE74CD188D}
+		{D246C104-8108-428B-AE45-36A7FECA0178} = {C29F8999-C9D9-41DE-BC7A-EFCE74CD188D}
+		{F6B2428E-9959-4121-A1AE-12A61439B494} = {C29F8999-C9D9-41DE-BC7A-EFCE74CD188D}
+		{0A0DA9B5-FC1B-4A28-91DE-CC909460E8A9} = {C29F8999-C9D9-41DE-BC7A-EFCE74CD188D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4EE6C159-EF0A-4353-8258-05AF18E02DB3}

@@ -3,7 +3,6 @@ using Hiper.Application.Core.Models;
 using Hiper.Application.Data;
 using Hiper.Application.Domain.Services.Base;
 using Hiper.Application.Presentation.ViewModels;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -30,12 +29,11 @@ namespace Hiper.Application.Domain.Services
 
         public async Task<ProductViewModel> Update(ProductViewModel productViewModel)
         {
-            var product = await _uow.Products.GetById(productViewModel.ProductId);
-            product.Update(productViewModel.ProductName);
+            await _uow.Products.Update(_mapper.Map<Product>(productViewModel));
             await _uow.SaveChanges();
 
-            var updatedProduct = await _uow.Products.GetByIdIncludeStock(product.Id);
-            return _mapper.Map<ProductViewModel>(updatedProduct);
+            var product = await _uow.Products.GetByName(productViewModel.ProductName);
+            return _mapper.Map<ProductViewModel>(product);
         }
 
         public async Task Delete(int productId)

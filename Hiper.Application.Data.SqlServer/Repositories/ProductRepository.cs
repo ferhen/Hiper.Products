@@ -1,6 +1,7 @@
 ﻿using Hiper.Application.Core.Models;
 using Hiper.Application.Data.Repositories;
 using Hiper.Application.Data.SqlServer.Repositories.Base;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace Hiper.Application.Data.SqlServer.Repositories
 {
     public class ProductRepository : RepositoryBase<Product>, IProductRepository
     {
-        public ProductRepository(ApplicationDbContext context, ApplicationUser applicationUser) : base(context, applicationUser) { }
+        public ProductRepository(ApplicationDbContext context) : base(context) { }
 
         public async Task<IEnumerable<Product>> ListIncludeStock()
         {

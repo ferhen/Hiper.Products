@@ -1,17 +1,25 @@
 ﻿using Hiper.Application.Core.Models;
 using IdentityServer4.EntityFramework.Options;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System;
+using System.Security.Claims;
 
 namespace Hiper.Application.Data.SqlServer
 {
     public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
     {
-        public ApplicationDbContext(DbContextOptions options,
+        public readonly string CurrentUser;
+
+        public ApplicationDbContext(
+            IHttpContextAccessor httpContextAccessor,
+            DbContextOptions options,
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
         {
+            CurrentUser = httpContextAccessor?.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier);
         }
 
         public DbSet<Product> Products { get; set; }

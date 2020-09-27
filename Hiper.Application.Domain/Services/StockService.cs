@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Hiper.Application.Core.Models;
 using Hiper.Application.Data;
 using Hiper.Application.Domain.Services.Base;
 using Hiper.Application.Presentation.ViewModels;
@@ -12,10 +13,8 @@ namespace Hiper.Application.Domain.Services
 
         public async Task<StockViewModel> Update(StockViewModel stockViewModel)
         {
-            var stock = await _uow.Stocks.GetById(stockViewModel.StockId);
-            stock.Update(stockViewModel.StockQuantity);
+            var stock = await _uow.Stocks.Update(_mapper.Map<Stock>(stockViewModel));
             await _uow.SaveChanges();
-
             return _mapper.Map<StockViewModel>(stock);
         }
     }
