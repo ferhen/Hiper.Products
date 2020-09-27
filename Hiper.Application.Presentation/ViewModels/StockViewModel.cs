@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Hiper.Application.Presentation.ViewModels
+﻿namespace Hiper.Application.Presentation.ViewModels
 {
     public class StockViewModel
     {

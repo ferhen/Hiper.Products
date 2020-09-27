@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="8.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.8" />
+    <PackageReference Include="Z.EntityFramework.Plus.EFCore" Version="3.0.62" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hiper.Application.Util\Hiper.Util.csproj" />
+    <ProjectReference Include="..\Hiper.SynchronizationAPI.Core\Hiper.SynchronizationAPI.Core.csproj" />
+    <ProjectReference Include="..\Hiper.SynchronizationAPI.Data\Hiper.SynchronizationAPI.Data.csproj" />
+  </ItemGroup>
+
+</Project>

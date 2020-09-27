@@ -3,7 +3,7 @@ using Hiper.Application.Data.SqlServer.Repositories.Base;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Hiper.Application.Util.Extensions;
+using Hiper.Util.Extensions;
 
 namespace Hiper.Application.Data.SqlServer
 {

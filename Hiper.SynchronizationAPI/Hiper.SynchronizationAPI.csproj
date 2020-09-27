@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hiper.SynchronizationAPI.Data.SqlServer\Hiper.SynchronizationAPI.Data.SqlServer.csproj" />
+    <ProjectReference Include="..\Hiper.SynchronizationAPI.Domain\Hiper.SynchronizationAPI.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

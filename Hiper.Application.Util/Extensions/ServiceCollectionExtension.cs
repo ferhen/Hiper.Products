@@ -1,9 +1,9 @@
-﻿using Hiper.Application.Util.Factory;
+﻿using Hiper.Util.Factory;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using System;
 
-namespace Hiper.Application.Util.Extensions
+namespace Hiper.Util.Extensions
 {
     public static class ServiceCollectionExtensions
     {

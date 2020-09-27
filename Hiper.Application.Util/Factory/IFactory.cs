@@ -1,4 +1,4 @@
-﻿namespace Hiper.Application.Util.Factory
+﻿namespace Hiper.Util.Factory
 {
     public interface IFactory<T>
     {

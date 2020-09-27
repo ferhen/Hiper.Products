@@ -13,6 +13,7 @@ namespace Hiper.Application.Domain
 
             services.AddScoped<ProductService>();
             services.AddScoped<StockService>();
+            services.AddScoped<PublisherService>();
         }
     }
 }

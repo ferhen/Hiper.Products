@@ -14,7 +14,7 @@ using Hiper.Application.Domain;
 using Microsoft.AspNetCore.Diagnostics;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Http;
-using Hiper.Application.Util.Exceptions;
+using Hiper.Util.Exceptions;
 
 namespace Hiper.Application
 {

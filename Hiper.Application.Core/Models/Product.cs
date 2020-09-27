@@ -9,14 +9,21 @@ namespace Hiper.Application.Core.Models
         public virtual Stock Stock { get; private set; }
 
         private Product() { }
-        public Product(string name)
+        public Product(string name, int id = 0)
         {
             if (string.IsNullOrWhiteSpace(name))
                 throw new ArgumentException("Nome do produto é necessário");
+            if (id == 0)
+                AddDomainEvent(new NewProductEvent { ProductName = name });
+
+            Id = id;
             Name = name;
 
-            if (Id != 0)
-                AddDomainEvent(new NewProductEvent { ProductName = Name });
+            AddDomainEvent(new NewOrUpdatedProductEvent
+            {
+                ProductName = Name,
+                StockQuantity = Stock?.Quantity ?? 0
+            });
         }
     }
 }

@@ -19,7 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Hiper.Application.Core\Hiper.Application.Core.csproj" />
     <ProjectReference Include="..\Hiper.Application.Data\Hiper.Application.Data.csproj" />
-    <ProjectReference Include="..\Hiper.Application.Util\Hiper.Application.Util.csproj" />
+    <ProjectReference Include="..\Hiper.Application.Util\Hiper.Util.csproj" />
   </ItemGroup>
 
 </Project>

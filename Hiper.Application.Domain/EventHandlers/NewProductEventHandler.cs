@@ -1,9 +1,12 @@
-﻿using Hiper.Application.Core.Events;
+﻿using AutoMapper;
+using Hiper.Application.Core.Events;
 using Hiper.Application.Core.Models;
 using Hiper.Application.Data;
 using Hiper.Application.Domain.EventHandlers.Base;
 using Hiper.Application.Domain.Services;
+using Hiper.Application.Presentation.DTO;
 using MediatR;
+using Newtonsoft.Json;
 using System;
 using System.Threading;
 using System.Threading.Tasks;

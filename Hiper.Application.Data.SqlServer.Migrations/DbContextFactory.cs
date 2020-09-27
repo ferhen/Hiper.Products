@@ -10,13 +10,14 @@ namespace Hiper.Application.Data.SqlServer.Migrations
     {
         public ApplicationDbContext CreateDbContext(string[] args)
         {
-            string connectionString = "Data Source=.;Initial Catalog=Hiper.Application;Integrated Security=True; MultipleActiveResultSets = True; App=HarborShippingIntegration;";
+            string connectionString = "Data Source=.;Initial Catalog=Hiper.Application;Integrated Security=True; MultipleActiveResultSets = True;";
 
             var builder = new DbContextOptionsBuilder<ApplicationDbContext>();
             builder.UseSqlServer(connectionString,
                 optionsBuilder => optionsBuilder.MigrationsAssembly(typeof(ApplicationDbContext).GetTypeInfo().Assembly.GetName().Name));
 
             return new ApplicationDbContext(
+                null,
                 builder.Options,
                 new OperationalStoreOptionsMigrations());
         }

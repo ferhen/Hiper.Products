@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hiper.Application.Core.Events;
+using System;
 
 namespace Hiper.Application.Core.Models
 {
@@ -14,10 +15,16 @@ namespace Hiper.Application.Core.Models
             if (productId < 0)
                 throw new ArgumentException("Produto deve existir");
             if (quantity < 0)
-                throw new ArgumentException("Quantidade em estoque deve ser maior que zero");
+                throw new ArgumentException("Quantidade em estoque deve ser maior ou igual a zero");
 
             ProductId = productId;
             Quantity = quantity;
+
+
+            AddDomainEvent(new NewOrUpdatedProductEvent
+            {
+                ProductId = ProductId
+            });
         }
     }
 }

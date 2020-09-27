@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Hiper.Application.Util.Exceptions
+namespace Hiper.Util.Exceptions
 {
     public static class TranslateDbException
     {

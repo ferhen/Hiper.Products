@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace Hiper.Application.Util.Factory
+namespace Hiper.Util.Factory
 {
     internal class ScopedFactory<TService, TImplementation> : IFactory<TService>
             where TImplementation : IDisposable, TService
