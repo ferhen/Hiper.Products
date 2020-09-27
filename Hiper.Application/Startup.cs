@@ -11,6 +11,10 @@ using System.Linq;
 using MediatR;
 using Hiper.Application.Domain.EventHandlers;
 using Hiper.Application.Domain;
+using Microsoft.AspNetCore.Diagnostics;
+using Newtonsoft.Json;
+using Microsoft.AspNetCore.Http;
+using Hiper.Application.Util.Exceptions;
 
 namespace Hiper.Application
 {
@@ -64,6 +68,19 @@ namespace Hiper.Application
             {
                 app.UseSpaStaticFiles();
             }
+
+            app.UseExceptionHandler(a => a.Run(async context =>
+            {
+                var exceptionHandlerPathFeature = context.Features.Get<IExceptionHandlerPathFeature>();
+                var exception = exceptionHandlerPathFeature.Error;
+
+                var result = JsonConvert.SerializeObject(new 
+                {
+                    message = exception.TranslateMessageSQLServer()
+                });
+                context.Response.ContentType = "application/json";
+                await context.Response.WriteAsync(result);
+            }));
 
             app.UseRouting();
 

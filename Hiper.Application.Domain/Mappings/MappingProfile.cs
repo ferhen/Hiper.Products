@@ -15,8 +15,8 @@ namespace Hiper.Application.Domain.Mappings
                 .ForMember(dest => dest.StockQuantity, opt => opt.MapFrom(x => x.Stock.Quantity));
 
             CreateMap<ProductViewModel, Product>()
-                 .ForMember(dest => dest.Id, opt => opt.MapFrom(x => x.ProductId))
-                 .ForMember(dest => dest.Name, opt => opt.MapFrom(x => x.ProductName));
+                .ForCtorParam("name", opt => opt.MapFrom(x => x.ProductName))
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(x => x.ProductId));
 
             CreateMap<Stock, StockViewModel>()
                 .ForMember(dest => dest.StockId, opt => opt.MapFrom(x => x.Id))

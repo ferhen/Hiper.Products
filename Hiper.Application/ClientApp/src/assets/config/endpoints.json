@@ -1,0 +1,13 @@
+{
+    "api": {
+        "product": {
+            "list": "Product/",
+            "create": "Product/",
+            "update": "Product/",
+            "delete": "Product/"
+        },
+        "stock": {
+            "update": "Stock/"
+        }
+    }
+}

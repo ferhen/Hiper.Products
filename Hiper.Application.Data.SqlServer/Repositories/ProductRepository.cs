@@ -28,5 +28,14 @@ namespace Hiper.Application.Data.SqlServer.Repositories
                 .Where(x => x.Name == name)
                 .FirstOrDefaultAsync();
         }
+
+        public async Task<Product> GetByIdIncludeStock(int id)
+        {
+            return await DbSet
+                .AsNoTracking()
+                .Include(x => x.Stock)
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+        }
     }
 }

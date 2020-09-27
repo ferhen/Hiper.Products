@@ -9,5 +9,6 @@ namespace Hiper.Application.Data.Repositories
     {
         Task<IEnumerable<Product>> ListIncludeStock();
         Task<Product> GetByName(string name);
+        Task<Product> GetByIdIncludeStock(int id);
     }
 }

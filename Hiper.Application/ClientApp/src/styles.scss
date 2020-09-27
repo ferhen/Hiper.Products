@@ -14,3 +14,24 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+
+body {
+	color: #566787;
+  background: #fafafa;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  
+  app-root {
+    div.loading {
+      text-align: center;
+      height: 100%;
+      margin-top: 48vh;
+    }
+  }
+}
+
+.modal-header {
+  h4 {
+    margin-bottom: 0;
+  }
+}

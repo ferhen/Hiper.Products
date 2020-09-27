@@ -1,0 +1,17 @@
+<div class="modal-header">
+    <h4>Adicionar Produto</h4>
+</div>
+<div class="modal-body">
+    <form>
+        <div class="form-group">
+            <label for="productName">Nome do Produto</label>
+            <div class="input-group">
+                <input id="productName" name="productName" class="form-control" [(ngModel)]="productName">
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="activeModal.dismiss()">Cancelar</button>
+    <button type="button" class="btn btn-success" (click)="activeModal.close(productName)">Criar</button>
+</div>
