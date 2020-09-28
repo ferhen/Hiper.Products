@@ -1,0 +1,53 @@
+version: '3.4'
+
+services:
+  hiper.application:
+    image: ${DOCKER_REGISTRY-}hiperapplication
+    container_name: application
+    restart: on-failure
+    build:
+      context: .
+      dockerfile: Hiper.Application/Dockerfile
+    depends_on:
+      - db
+      - rabbitmq
+    links:
+      - rabbitmq
+    ports:
+      - "8000:8000"
+
+  hiper.synchronizationapi:
+    image: ${DOCKER_REGISTRY-}hipersynchronizationapi
+    container_name: synchronizationapi
+    restart: on-failure
+    build:
+      context: .
+      dockerfile: Hiper.SynchronizationAPI/Dockerfile
+    depends_on:
+      - rabbitmq
+    links:
+      - rabbitmq
+    ports:
+      - "8001:8001"
+
+  db:
+    image: mcr.microsoft.com/mssql/server
+    container_name: db
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: u*G5)w(Nax
+    ports:
+      - "1433:1433"
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:15672"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+

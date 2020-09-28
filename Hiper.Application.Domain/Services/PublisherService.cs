@@ -5,8 +5,7 @@ namespace Hiper.Application.Domain.Services
 {
     public class PublisherService
     {
-        //private readonly ConnectionFactory factory = new ConnectionFactory() { HostName = "rabbitmq" };
-        private readonly ConnectionFactory factory = new ConnectionFactory() { HostName = "localhost" };
+        private readonly ConnectionFactory factory = new ConnectionFactory() { HostName = "rabbitmq" };
 
         public void Publish(string message)
         {
