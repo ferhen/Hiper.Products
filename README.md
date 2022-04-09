@@ -1,10 +1,10 @@
 # Hiper Products
-This repository contains the code for a CRUD Application with synchronization via RabbitMQ using .NET Core.
+This repository contains the code for a CRUD Application with synchronization via RabbitMQ using .NET Core and Angular.
 
 ![Products](/images/products.png)
 
 # Run
-This is a simple applications using .NET Core, Angualar, SQL Server and RabbitMQ. To run the project, we're using Docker with Docker Compose. For startup use the following command:
+To run the project, we're using Docker with Docker Compose. For startup use the following command:
 ```
 docker-compose up --build -d
 ```
